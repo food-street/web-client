@@ -108,7 +108,7 @@ export default function RestaurantList() {
   useEffect(() => {
     // Replace with actual API call
     setRestaurants(mockRestaurants);
-  }, []);
+  }, [setRestaurants]);
 
   return (
     <div className="p-4">

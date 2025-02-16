@@ -125,7 +125,7 @@ export default function Cart() {
               onClick={handleCheckout}
               className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold"
             >
-              {user ? 'Proceed to Payment' : 'Login to Continue'}
+              {user ? 'Proceed to Payment' : 'Login to Place Order'}
             </button>
           </div>
         </>

@@ -1,11 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import { useStore } from '../store/useStore';
-import { CartItem } from '../types';
+import { CartItem, MenuItem } from '../types';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 
 export default function RestaurantMenu() {
   const { id } = useParams<{ id: string }>();
-  const { restaurants, addToCart, cart, updateQuantity } = useStore();
+  const { restaurants, addToCart, cart, updateQuantity, removeFromCart } = useStore();
   
   const restaurant = restaurants.find((r) => r.id === id);
 
@@ -28,7 +28,12 @@ export default function RestaurantMenu() {
         restaurantId: restaurant.id,
         restaurantName: restaurant.name,
       };
-      updateQuantity(menuItem.id, newQuantity);
+      
+      if (getItemQuantity(menuItem.id) === 0) {
+        addToCart(cartItem);
+      } else {
+        updateQuantity(menuItem.id, newQuantity);
+      }
     }
   };
 
