@@ -47,7 +47,18 @@ export default function Cart() {
         </Link>
       </div>
 
-      <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-2xl font-bold">Your Cart</h2>
+        {cart.length > 0 && (
+          <button
+            onClick={clearCart}
+            className="px-4 py-2 text-sm text-red-500 hover:text-red-600 font-medium"
+          >
+            Clear Cart
+          </button>
+        )}
+      </div>
+
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (

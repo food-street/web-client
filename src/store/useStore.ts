@@ -23,29 +23,7 @@ export const useStore = create<StoreState>()(
   persist(
     (set) => ({
       foodCourt: null,
-      foodCourts: [
-        {
-          id: 'fc1',
-          name: 'Downtown Food Court',
-          location: '123 Main St',
-          image: 'https://placehold.co/600x400',
-          restaurants: []
-        },
-        {
-          id: 'fc2',
-          name: 'Mall Food Court',
-          location: '456 Shopping Ave',
-          image: 'https://placehold.co/600x400',
-          restaurants: []
-        },
-        {
-          id: 'fc3',
-          name: 'Beach Food Court',
-          location: '789 Beach Rd',
-          image: 'https://placehold.co/600x400',
-          restaurants: []
-        }
-      ],
+      foodCourts: [],
       restaurants: [],
       cart: [],
       orders: [],

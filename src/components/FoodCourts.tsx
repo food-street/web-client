@@ -2,9 +2,32 @@ import { useStore } from '../store/useStore';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 
-export default function FoodCourts() {
-  const { foodCourts } = useStore();
+// Mock data
+const mockFoodCourts = [
+  {
+    id: 'fc1',
+    name: 'Downtown Court',
+    location: '123 Main St',
+    image: 'https://picsum.photos/seed/food-court/600/400',
+    restaurants: []
+  },
+  {
+    id: 'fc2',
+    name: 'Mall Food Court',
+    location: '456 Shopping Ave',
+    image: 'https://placehold.co/600x400',
+    restaurants: []
+  },
+  {
+    id: 'fc3',
+    name: 'Beach Food Court',
+    location: '789 Beach Rd',
+    image: 'https://placehold.co/600x400',
+    restaurants: []
+  }
+];
 
+export default function FoodCourts() {
   return (
     <div className="p-4">
       <div className="flex items-center gap-4 mb-6">
@@ -19,7 +42,7 @@ export default function FoodCourts() {
 
       <h2 className="text-2xl font-bold mb-4">Available Food Courts</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {foodCourts.map((foodCourt) => (
+        {mockFoodCourts.map((foodCourt) => (
           <Link
             key={foodCourt.id}
             to="/restaurants"
