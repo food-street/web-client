@@ -1,6 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
-import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 
 export default function Orders() {
   const { orders, user } = useStore();
@@ -22,16 +21,6 @@ export default function Orders() {
 
   return (
     <div className="p-4">
-      <div className="flex items-center gap-4 mb-6">
-        <Link 
-          to="/restaurants" 
-          className="flex items-center gap-2 text-blue-500 hover:text-blue-600"
-        >
-          <ArrowLeftIcon className="h-5 w-5" />
-          Back to Restaurants
-        </Link>
-      </div>
-
       <h2 className="text-2xl font-bold mb-4">Your Orders</h2>
       <div className="space-y-4">
         {orders.map((order) => (

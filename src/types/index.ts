@@ -3,7 +3,11 @@ export interface Restaurant {
   name: string;
   cuisine: string;
   image: string;
-  menu: MenuItem[];
+  categories: {
+    id: string;
+    name: string;
+    items: MenuItem[];
+  }[];
 }
 
 export interface MenuItem {
