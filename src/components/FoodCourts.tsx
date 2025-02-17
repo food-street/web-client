@@ -1,6 +1,7 @@
 import { useStore } from '../store/useStore';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
+import { CachedImage } from './CachedImage';
 
 // Mock data
 const mockFoodCourts = [
@@ -49,7 +50,7 @@ export default function FoodCourts() {
             onClick={() => useStore.getState().setFoodCourt(foodCourt.id)}
             className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
           >
-            <img
+            <CachedImage
               src={foodCourt.image}
               alt={foodCourt.name}
               className="w-full h-48 object-cover"

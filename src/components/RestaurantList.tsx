@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useStore } from '../store/useStore';
 import { Link } from 'react-router-dom';
+import { CachedImage } from './CachedImage';
 
 // Mock data - replace with actual API call
 const mockRestaurants = [
@@ -120,7 +121,7 @@ export default function RestaurantList() {
             to={`/restaurant/${restaurant.id}`}
             className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
           >
-            <img
+            <CachedImage
               src={restaurant.image}
               alt={restaurant.name}
               className="w-full h-48 object-cover"

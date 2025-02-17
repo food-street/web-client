@@ -9,6 +9,7 @@ interface StoreState {
   cart: CartItem[];
   orders: Order[];
   user: User | null;
+  imageCache: Record<string, string>;
   setFoodCourt: (id: string) => void;
   setRestaurants: (restaurants: Restaurant[]) => void;
   addToCart: (item: CartItem) => void;
@@ -17,17 +18,20 @@ interface StoreState {
   clearCart: () => void;
   addOrder: (order: Order) => void;
   setUser: (user: User | null) => void;
+  cacheImage: (url: string, blob: string) => void;
+  getCachedImage: (url: string) => string | null;
 }
 
 export const useStore = create<StoreState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       foodCourt: null,
       foodCourts: [],
       restaurants: [],
       cart: [],
       orders: [],
       user: null,
+      imageCache: {},
       setFoodCourt: (id) => set({ foodCourt: id }),
       setRestaurants: (restaurants) => set({ restaurants }),
       addToCart: (item) =>
@@ -59,7 +63,12 @@ export const useStore = create<StoreState>()(
         set((state) => ({
           orders: [order, ...state.orders]
         })),
-      setUser: (user) => set({ user })
+      setUser: (user) => set({ user }),
+      cacheImage: (url, blob) => 
+        set((state) => ({
+          imageCache: { ...state.imageCache, [url]: blob }
+        })),
+      getCachedImage: (url) => get().imageCache[url] || null,
     }),
     {
       name: 'food-court-storage'
