@@ -8,23 +8,23 @@ const mockRestaurants = [
     id: '1',
     name: 'Empire Restaurant',
     cuisine: 'South Indian',
-    image: 'https://storage.cloud.google.com/food-street-images/courts/empire.png',
+    image: 'https://storage.cloud.google.com/food-street-images/restaurants/empire.png',
     categories: [
       {
         id: 'cat1',
-        name: 'Burgers',
+        name: 'Starters',
         items: [
           {
             id: '1',
-            name: 'Classic Burger',
-            description: 'Beef patty with lettuce and tomato',
-            price: 9.99,
+            name: 'Crispy Fish',
+            description: 'Crunchy small strips of fish, deep fried.',
+            price: 199,
             image: 'https://placehold.co/600x400'
           },
           {
             id: '2',
-            name: 'Cheeseburger',
-            description: 'Classic burger with cheddar cheese',
+            name: 'Paneer Tikka',
+            description: '',
             price: 10.99,
             image: 'https://placehold.co/600x400'
           }
@@ -56,7 +56,7 @@ const mockRestaurants = [
     id: '2',
     name: 'Popeyes',
     cuisine: 'Continental',
-    image: 'https://storage.cloud.google.com/food-street-images/courts/popeyes.png',
+    image: 'https://storage.cloud.google.com/food-street-images/restaurants/popeyes.png',
     categories: [
       {
         id: 'cat3',
