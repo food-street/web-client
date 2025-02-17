@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { CartItem, MenuItem } from '../types';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
+import { PriceDisplay } from './PriceDisplay';
 
 export default function RestaurantMenu() {
   const { id } = useParams<{ id: string }>();
@@ -71,7 +72,7 @@ export default function RestaurantMenu() {
                     <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
                     <p className="text-gray-600 mb-4">{item.description}</p>
                     <div className="flex justify-between items-center">
-                      <span className="text-lg font-bold">${item.price.toFixed(2)}</span>
+                      <span className="text-lg font-bold"><PriceDisplay amount={item.price}/></span>
                       {quantity === 0 ? (
                         <button
                           onClick={() => handleUpdateQuantity(item, 1)}

@@ -2,6 +2,7 @@ import { useStore } from '../store/useStore';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
+import { PriceDisplay } from './PriceDisplay';
 
 export default function Cart() {
   const { cart, removeFromCart, updateQuantity, clearCart, addOrder, user } = useStore();
@@ -92,7 +93,9 @@ export default function Cart() {
                     +
                   </button>
                 </div>
-                <span>${(item.price * item.quantity).toFixed(2)}</span>
+                <span>
+                  <PriceDisplay amount={item.price * item.quantity} />
+                </span>
                 <button
                   onClick={() => removeFromCart(item.id)}
                   className="text-red-500"
@@ -105,7 +108,9 @@ export default function Cart() {
           <div className="mt-4">
             <div className="flex justify-between font-bold text-xl mb-4">
               <span>Total:</span>
-              <span>${total.toFixed(2)}</span>
+              <span>
+                <PriceDisplay amount={total} />
+              </span>
             </div>
             <div className="mb-4">
               <h3 className="font-semibold mb-2">Payment Method</h3>

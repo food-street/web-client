@@ -10,6 +10,7 @@ interface StoreState {
   orders: Order[];
   user: User | null;
   imageCache: Record<string, string>;
+  currencySymbol: string;
   setFoodCourt: (id: string) => void;
   setRestaurants: (restaurants: Restaurant[]) => void;
   addToCart: (item: CartItem) => void;
@@ -20,6 +21,7 @@ interface StoreState {
   setUser: (user: User | null) => void;
   cacheImage: (url: string, blob: string) => void;
   getCachedImage: (url: string) => string | null;
+  setCurrencySymbol: (symbol: string) => void;
 }
 
 export const useStore = create<StoreState>()(
@@ -32,6 +34,7 @@ export const useStore = create<StoreState>()(
       orders: [],
       user: null,
       imageCache: {},
+      currencySymbol: '₹',
       setFoodCourt: (id) => set({ foodCourt: id }),
       setRestaurants: (restaurants) => set({ restaurants }),
       addToCart: (item) =>
@@ -69,6 +72,7 @@ export const useStore = create<StoreState>()(
           imageCache: { ...state.imageCache, [url]: blob }
         })),
       getCachedImage: (url) => get().imageCache[url] || null,
+      setCurrencySymbol: (symbol) => set({ currencySymbol: symbol }),
     }),
     {
       name: 'food-court-storage'
