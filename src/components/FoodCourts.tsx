@@ -6,24 +6,24 @@ import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 const mockFoodCourts = [
   {
     id: 'fc1',
-    name: 'Downtown Court',
-    location: '123 Main St',
-    image: 'https://picsum.photos/seed/food-court/600/400',
+    name: 'Foodthopia',
+    location: 'Mall of Asia',
+    image: 'https://storage.cloud.google.com/food-street-images/courts/foodthopia.png',
     restaurants: []
   },
   {
     id: 'fc2',
-    name: 'Mall Food Court',
-    location: '456 Shopping Ave',
-    image: 'https://placehold.co/600x400',
+    name: 'Food Court',
+    location: 'Lulu Bengaluru',
+    image: 'https://storage.cloud.google.com/food-street-images/courts/lulu-blr.png',
     restaurants: []
-  },
-  {
-    id: 'fc3',
-    name: 'Beach Food Court',
-    location: '789 Beach Rd',
-    image: 'https://placehold.co/600x400',
-    restaurants: []
+  // },
+  // {
+  //   id: 'fc3',
+  //   name: 'Beach Food Court',
+  //   location: '789 Beach Rd',
+  //   image: 'https://placehold.co/600x400',
+  //   restaurants: []
   }
 ];
 
