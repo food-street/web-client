@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 const mockRestaurants = [
   {
     id: '1',
-    name: 'Burger Palace',
-    cuisine: 'Fast Food',
-    image: 'https://placehold.co/600x400',
+    name: 'Empire Restaurant',
+    cuisine: 'South Indian',
+    image: 'https://storage.cloud.google.com/food-street-images/courts/empire.png',
     categories: [
       {
         id: 'cat1',
@@ -54,9 +54,9 @@ const mockRestaurants = [
   },
   {
     id: '2',
-    name: 'Pizza Express',
-    cuisine: 'Italian',
-    image: 'https://placehold.co/600x400',
+    name: 'Popeyes',
+    cuisine: 'Continental',
+    image: 'https://storage.cloud.google.com/food-street-images/courts/popeyes.png',
     categories: [
       {
         id: 'cat3',
