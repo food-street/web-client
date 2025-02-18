@@ -10,7 +10,7 @@ export function PriceDisplay({ amount, className = '' }: PriceDisplayProps) {
   
   return (
     <span className={className}>
-      {currencySymbol}{amount.toFixed(2)}
+      {currencySymbol}{amount}
     </span>
   );
 } 
