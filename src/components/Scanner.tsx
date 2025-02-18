@@ -5,7 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 
 export default function Scanner() {
   const [scanResult, setScanResult] = useState<string | null>(null);
-  const { setFoodCourt, foodCourts } = useStore();
+  const { setFoodCourt } = useStore();
   const navigate = useNavigate();
 
   useEffect(() => {
